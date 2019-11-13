@@ -11,6 +11,32 @@ import utils.IPredicate;
  */
 public class PriorityHeap<E> extends Tree<E> {
 
+
+
+    public void maxHeapify(int[] arr, int i, int nNodes) {
+
+
+        int leftChild = 2 * i + 1;
+        int rightChild = 2 * i + 2;
+        int largest = i;
+
+        if (leftChild <= nNodes && arr[leftChild] > arr[i]) {
+            largest = leftChild;
+        }
+
+        else {
+            largest = i;
+        }
+
+        if (rightChild <= nNodes && arr[rightChild] > arr[i]) {
+            largest = rightChild;
+        }
+        if (largest != i) {
+            swapNodes(arr[i], arr[largest]);
+            maxHeapify(arr, largest, nNodes);
+        }
+    }
+
     /**
      * Constructor
      */
@@ -52,6 +78,16 @@ public class PriorityHeap<E> extends Tree<E> {
         super.nNodes_++;
     }
 
+
+    protected void swapNodes(int firstNode, int secondNode) {
+
+        int[] array = null;
+        int tmp;
+        tmp = array[firstNode];
+        array[firstNode] = array[secondNode];
+        array[secondNode] = tmp;
+
+    }
 
     @Override
     public boolean contains(E data) {
