@@ -12,6 +12,13 @@ import utils.IPredicate;
 public class PriorityHeap<E> extends Tree<E> {
 
 
+    /**
+     * Constructor
+     */
+    protected PriorityHeap(ITreeInsertStrategy insertStrategy) {
+        super(insertStrategy);
+    }
+
 
     public void maxHeapify(int[] arr, int i, int nNodes) {
 
@@ -37,12 +44,6 @@ public class PriorityHeap<E> extends Tree<E> {
         }
     }
 
-    /**
-     * Constructor
-     */
-    protected PriorityHeap(ITreeInsertStrategy insertStrategy) {
-        super(insertStrategy);
-    }
 
     @Override
     public void push(E element) {
