@@ -80,6 +80,11 @@ public class PriorityHeap<E> extends Tree<E> {
     }
 
 
+    /**
+     * Swap nodes in int arrays.
+     * @param firstNode
+     * @param secondNode
+     */
     protected void swapNodes(int firstNode, int secondNode) {
 
         int[] array = null;
