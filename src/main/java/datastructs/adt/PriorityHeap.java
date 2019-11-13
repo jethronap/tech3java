@@ -1,7 +1,9 @@
 package datastructs.adt;
 
 import datastructs.adt.utils.ITreeInsertStrategy;
+import datastructs.adt.utils.TreeNode;
 import datastructs.adt.utils.TreeNodeCreator;
+import utils.IPredicate;
 
 /**
  * An implementation of Priority Heap represented as an array.
@@ -19,6 +21,23 @@ public class PriorityHeap<E> extends Tree<E> {
     @Override
     public void push(E element) {
 
+        if(super.root_ == null){
+
+            this.createRoot(element);
+        }
+        else {
+
+            boolean rslt = super.insertStrategy_.insert(super.root_, null, element, new IPredicate<TreeNode<E>>() {
+                @Override
+                public boolean satisfies(TreeNode<E> data) {
+                    return (data == null);
+                }
+            });
+
+            if(rslt) {
+                super.nNodes_++;
+            }
+        }
     }
 
 
