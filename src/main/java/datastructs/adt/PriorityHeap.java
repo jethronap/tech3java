@@ -15,10 +15,14 @@ public class PriorityHeap<E> extends Tree<E> {
     /**
      * Constructor
      */
-    protected PriorityHeap(ITreeInsertStrategy insertStrategy) {
+    private PriorityHeap(ITreeInsertStrategy insertStrategy) {
         super(insertStrategy);
     }
 
+
+    public void minHeapify(int[] arr, int i, int nNodes) {
+        //TODO:
+    }
 
     public void maxHeapify(int[] arr, int i, int nNodes) {
 
@@ -30,11 +34,9 @@ public class PriorityHeap<E> extends Tree<E> {
         if (leftChild <= nNodes && arr[leftChild] > arr[i]) {
             largest = leftChild;
         }
-
         else {
             largest = i;
         }
-
         if (rightChild <= nNodes && arr[rightChild] > arr[i]) {
             largest = rightChild;
         }
