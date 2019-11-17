@@ -15,16 +15,16 @@ public class PriorityHeap<E> extends Tree<E> {
     /**
      * Constructor
      */
-    private PriorityHeap(ITreeInsertStrategy insertStrategy) {
+    public PriorityHeap(ITreeInsertStrategy insertStrategy) {
         super(insertStrategy);
     }
 
 
-    public void minHeapify(int[] arr, int i, int nNodes) {
+    private void minHeapify(int[] arr, int i, int nNodes) {
         //TODO:
     }
 
-    public void maxHeapify(int[] arr, int i, int nNodes) {
+    private void maxHeapify(int[] arr, int i, int nNodes) {
 
 
         int leftChild = 2 * i + 1;
